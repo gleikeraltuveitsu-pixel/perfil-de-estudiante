@@ -1,0 +1,191 @@
+/* src/App.css */
+
+:root {
+  --bg: #f6f7fb;
+  --card: #ffffff;
+  --text: #202630;
+  --muted: #667085;
+  --primary: #4f46e5;
+  --primary-soft: #eef2ff;
+  --border: #e2e8f0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Forzamos al body a comportarse como una caja flexible centrada */
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: radial-gradient(circle at top, #eef2ff 0%, #f6f7fb 40%, #ffffff 100%);
+  color: var(--text);
+  
+  /* Centrado absoluto */
+  display: flex;
+  align-items: center;     /* Centra verticalmente */
+  justify-content: center; /* Centra horizontalmente */
+  
+  /* Margen interno para que en pantallas pequeñas respire y no toque los bordes */
+  padding: 40px 24px;
+}
+
+/* Contenedor principal de la tarjeta */
+.container {
+  width: 100%;
+  max-width: 740px; /* Tamaño ideal para que abarque un buen espacio sin verse gigante */
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  box-shadow: 0 24px 80px rgba(15, 23, 42, 0.08);
+  overflow: hidden;
+  
+  /* Asegura el equilibrio visual */
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  padding: 32px 32px 0;
+  text-align: center;
+}
+
+.avatar {
+  width: 92px;
+  height: 92px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #a5b4fc, #818cf8);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 18px;
+}
+
+.name {
+  margin: 0;
+  font-size: 2rem;
+  letter-spacing: -0.03em;
+}
+
+.career {
+  margin: 8px 0 0;
+  color: var(--muted);
+  font-size: 1rem;
+}
+
+.content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  padding: 32px;
+}
+
+.panel {
+  background: #fafbff;
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 24px;
+}
+
+.panel h2 {
+  margin: 0 0 16px;
+  font-size: 1.05rem;
+  letter-spacing: -0.02em;
+}
+
+.panel p,
+.panel ul,
+.panel li {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.75;
+}
+
+.panel ul {
+  list-style: none;
+  padding: 0;
+}
+
+.panel li {
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(148, 163, 184, 0.15);
+}
+
+.panel li:last-child {
+  border-bottom: none;
+}
+
+.projects {
+  grid-column: 1 / -1;
+}
+
+.project-item {
+  padding: 18px;
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  margin-bottom: 16px;
+}
+
+.project-item h3 {
+  margin: 0 0 8px;
+  font-size: 1rem;
+}
+
+.project-item p {
+  margin: 0;
+  color: var(--muted);
+}
+
+.contact-wrapper {
+  text-align: center;
+  margin-top: 12px;
+}
+
+.contact-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 28px;
+  border: none;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #4f46e5, #6366f1);
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.contact-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 16px 40px rgba(79, 70, 229, 0.18);
+}
+
+.footer {
+  padding: 24px 32px 32px;
+  text-align: center;
+  color: var(--muted);
+  font-size: 0.95rem;
+  border-top: 1px solid var(--border);
+  background: #f8fafc;
+}
+
+@media (max-width: 760px) {
+  .content {
+    grid-template-columns: 1fr;
+  }
+
+  .projects {
+    grid-column: auto;
+  }
+}
